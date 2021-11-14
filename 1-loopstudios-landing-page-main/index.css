@@ -1,0 +1,115 @@
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Dark-Gray: hsl(0, 0%, 55%);
+  --Very-Dark-Gray: hsl(0, 0%, 41%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 15px;
+  font-family: 'Alata', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.main-header {
+  position: relative;
+  box-sizing: border-box;
+  padding: 3em 0;
+  min-height: 500px;
+  background: url(./images/desktop/image-hero.jpg) no-repeat center;
+  background-size: cover;
+  color: white;
+}
+
+.main-header__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header__logo {
+  width: 200px;
+}
+
+.main-header__list {
+  width: 350px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-header__item:hover {
+  text-decoration: underline;
+}
+
+.main-title__text {
+  box-sizing: border-box;
+  padding: 0.5em;
+  margin-top: 1em;
+
+  display: inline-block;
+  border: 1px solid var(--White);
+
+  font-size: 3em;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.middle-section {
+  box-sizing: border-box;
+  padding-top: 4em;
+  height: 600px;
+}
+
+.middle-section__content {
+  position: relative;
+}
+
+.middle-section__image {
+  width: 700px;
+}
+.middle-section__content {
+  position: relative;
+  left: 37em;
+  bottom: 19em;
+  box-sizing: border-box;
+  padding: 6em 4em;
+  background: var(--White);
+  width: 600px;
+}
+.middle-section__title {
+  text-transform: uppercase;
+  font-size: 2.5em;
+}
+
+.main-footer {
+  background-color: black;
+}
+
+@media screen and (max-width: 1170px) {
+  .container {
+    box-sizing: border-box;
+    padding: 0 30px;
+  }
+}
