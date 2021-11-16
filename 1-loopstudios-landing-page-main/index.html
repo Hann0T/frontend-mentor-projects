@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
       rel="stylesheet"
     />
+    <script type="text/javascript" src="./index.js" defer></script>
   </head>
   <body>
     <header class="main-header">
@@ -26,7 +27,11 @@
           alt="loopstudios logo"
           class="main-header__logo"
         />
-        <ul class="main-header__list">
+        <div class="main-header__controllers">
+          <span class="main-header__hamburger"></span>
+          <span class="main-header__close hidden"></span>
+        </div>
+        <ul class="main-header__list hidden">
           <li class="main-header__item"><a href="">About</a></li>
           <li class="main-header__item"><a href="">Careers</a></li>
           <li class="main-header__item"><a href="">Events</a></li>
@@ -54,96 +59,133 @@
           interactive VR
         </h2>
         <p class="middle-section__text">
-          The leader in interactive VR Founded in 2011, Loopstudios has been
-          producing world-class virtual reality projects for some of the best
-          companies around the globe. Our award-winning creations have
-          transformed businesses through digital experiences that bind to their
-          brand.
+          Founded in 2011, Loopstudios has been producing world-class virtual
+          reality projects for some of the best companies around the globe. Our
+          award-winning creations have transformed businesses through digital
+          experiences that bind to their brand.
         </p>
       </div>
     </section>
     <section class="creations container">
-      <h2 class="creation__title">Our creations</h2>
-      <button class="creation__button">See All</button>
+      <h2 class="creations__title">Our creations</h2>
+      <button class="creations__button">See All</button>
       <div class="creations__grid">
-        <article class="creations__item"><p>Deep Earth</p></article>
-        <article class="creations__item"><p>Night Arcade</p></article>
-        <article class="creations__item"><p>Soccer team VR</p></article>
-        <article class="creations__item"><p>The Grid</p></article>
-        <article class="creations__item"><p>From Up Above VR</p></article>
-        <article class="creations__item"><p>Pocket Borealis</p></article>
-        <article class="creations__item"><p>The Curiosity</p></article>
-        <article class="creations__item"><p>Make It Fisheye</p></article>
+        <article class="creations__item">
+          <p>
+            Deep <br />
+            Earth
+          </p>
+        </article>
+        <article class="creations__item">
+          <p>
+            Night <br />
+            Arcade
+          </p>
+        </article>
+        <article class="creations__item">
+          <p>
+            Soccer <br />
+            team VR
+          </p>
+        </article>
+        <article class="creations__item">
+          <p>
+            The <br />
+            Grid
+          </p>
+        </article>
+        <article class="creations__item">
+          <p>
+            From Up <br />
+            Above VR
+          </p>
+        </article>
+        <article class="creations__item">
+          <p>
+            Pocket <br />
+            Borealis
+          </p>
+        </article>
+        <article class="creations__item">
+          <p>
+            The <br />
+            Curiosity
+          </p>
+        </article>
+        <article class="creations__item">
+          <p>
+            Make It <br />
+            Fisheye
+          </p>
+        </article>
       </div>
     </section>
     <footer class="main-footer">
-      <nav class="main-footer__nav">
-        <img src="./images/" alt="loopstudios logo" class="main-footer__logo" />
-        <ul class="main-footer__social-media">
-          <li class="main-footer__link">
-            <a href="https://facebook.com"
-              ><img
-                src="./images/icon-facebook.svg"
-                alt="facebook"
-                class="social-media__icon"
-            /></a>
-          </li>
-          <li class="main-footer__link">
-            <a href="https://twitter.com"
-              ><img
-                src="./images/icon-twitter.svg"
-                alt="twitter"
-                class="social-media__icon"
-            /></a>
-          </li>
-          <li class="main-footer__link">
-            <a href="https://pinterest.com"
-              ><img
-                src="./images/icon-pinterest.svg"
-                alt="pinterest"
-                class="social-media__icon"
-            /></a>
-          </li>
-          <li class="main-footer__link">
-            <a href="https://pinterest.com"
-              ><img
-                src="./images/icon-pinterest.svg"
-                alt="pinterest"
-                class="social-media__icon"
-            /></a>
-          </li>
-          <li class="main-footer__link">
-            <a href="https://instagram.com"
-              ><img
-                src="./images/icon-instagram.svg"
-                alt="instagram"
-                class="social-media__icon"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-      <nav class="main-footer__nav">
-        <ul class="main-footer__list">
-          <li class="main-footer__item">
-            <a href="#">About</a>
-          </li>
-          <li class="main-footer__item">
-            <a href="#">Careers</a>
-          </li>
-          <li class="main-footer__item">
-            <a href="#">Events</a>
-          </li>
-          <li class="main-footer__item">
-            <a href="#">Products</a>
-          </li>
-          <li class="main-footer__item">
-            <a href="#">Support</a>
-          </li>
-        </ul>
-        <p class="main-footer__copyright">
-          © 2021 Loopstudios. All rights reserved.
-        </p>
-      </nav>
+      <div class="container">
+        <nav class="main-footer__nav">
+          <img
+            src="./images/logo.svg"
+            alt="loopstudios logo"
+            class="main-footer__logo"
+          />
+          <ul class="main-footer__social-media">
+            <li class="main-footer__link">
+              <a href="https://facebook.com"
+                ><img
+                  src="./images/icon-facebook.svg"
+                  alt="facebook"
+                  class="social-media__icon"
+              /></a>
+            </li>
+            <li class="main-footer__link">
+              <a href="https://twitter.com"
+                ><img
+                  src="./images/icon-twitter.svg"
+                  alt="twitter"
+                  class="social-media__icon"
+              /></a>
+            </li>
+            <li class="main-footer__link">
+              <a href="https://pinterest.com"
+                ><img
+                  src="./images/icon-pinterest.svg"
+                  alt="pinterest"
+                  class="social-media__icon"
+              /></a>
+            </li>
+            <li class="main-footer__link">
+              <a href="https://instagram.com"
+                ><img
+                  src="./images/icon-instagram.svg"
+                  alt="instagram"
+                  class="social-media__icon"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="main-footer__nav">
+          <ul class="main-footer__list">
+            <li class="main-footer__item">
+              <a href="#">About</a>
+            </li>
+            <li class="main-footer__item">
+              <a href="#">Careers</a>
+            </li>
+            <li class="main-footer__item">
+              <a href="#">Events</a>
+            </li>
+            <li class="main-footer__item">
+              <a href="#">Products</a>
+            </li>
+            <li class="main-footer__item">
+              <a href="#">Support</a>
+            </li>
+          </ul>
+          <p class="main-footer__copyright">
+            © 2021 Loopstudios. All rights reserved.
+          </p>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>
