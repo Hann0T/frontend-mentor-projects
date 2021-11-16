@@ -5,6 +5,8 @@
   --Very-Dark-Gray: hsl(0, 0%, 41%);
 }
 
+/* General */
+
 * {
   margin: 0;
   padding: 0;
@@ -33,11 +35,13 @@ body {
   margin: 0 auto;
 }
 
+/* Header */
+
 .main-header {
   position: relative;
   box-sizing: border-box;
   padding: 3em 0;
-  min-height: 500px;
+  height: max(500px, 70vh);
   background: url(./images/desktop/image-hero.jpg) no-repeat center;
   background-size: cover;
   color: white;
@@ -46,9 +50,12 @@ body {
 .main-header__nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .main-header__logo {
+  position: relative;
+  z-index: 30;
   width: 200px;
 }
 
@@ -67,32 +74,32 @@ body {
   box-sizing: border-box;
   padding: 0.5em;
   margin-top: 1em;
+  /* margin-top: clamp(3em, 2em, 1em); */
 
   display: inline-block;
   border: 1px solid var(--White);
 
-  font-size: 3em;
+  font-size: clamp(1.75em, 7vw, 3em);
   text-transform: uppercase;
   line-height: 1em;
 }
 
+/* Middle */
+
 .middle-section {
+  position: relative;
   box-sizing: border-box;
-  padding-top: 4em;
+  margin-top: 4em;
   height: 600px;
 }
 
-.middle-section__content {
-  position: relative;
-}
-
 .middle-section__image {
-  width: 700px;
+  width: min(100%, 700px);
 }
 .middle-section__content {
-  position: relative;
-  left: 37em;
-  bottom: 19em;
+  position: absolute;
+  right: 0;
+  bottom: 5em;
   box-sizing: border-box;
   padding: 6em 4em;
   background: var(--White);
@@ -103,13 +110,253 @@ body {
   font-size: 2.5em;
 }
 
-.main-footer {
-  background-color: black;
+/* Creations */
+
+.creations {
+  box-sizing: border-box;
+  padding: 5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+.creations__title {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+.creations__button {
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  border: 1px solid var(--Black);
+  background-color: var(--White);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  cursor: pointer;
+}
+.creations__button:hover {
+  background-color: var(--Black);
+  color: var(--White);
+}
+.creations__grid {
+  margin-top: 2em;
+  flex-basis: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 30px;
+}
+.creations__item {
+  position: relative;
+  box-sizing: border-box;
+  padding: 2em;
+  height: 400px;
+  display: flex;
+  cursor: pointer;
+}
+.creations__item > p {
+  color: var(--White);
+  margin-top: auto;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+.creations__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.creations__item:nth-child(1)::after {
+  background-image: url(./images/desktop/image-deep-earth.jpg);
+}
+.creations__item:nth-child(2)::after {
+  background-image: url(./images/desktop/image-night-arcade.jpg);
+}
+.creations__item:nth-child(3)::after {
+  background-image: url(./images/desktop/image-soccer-team.jpg);
+}
+.creations__item:nth-child(4)::after {
+  background-image: url(./images/desktop/image-grid.jpg);
+}
+.creations__item:nth-child(5)::after {
+  background-image: url(./images/desktop/image-from-above.jpg);
+}
+.creations__item:nth-child(6)::after {
+  background-image: url(./images/desktop/image-pocket-borealis.jpg);
+}
+.creations__item:nth-child(7)::after {
+  background-image: url(./images/desktop/image-curiosity.jpg);
+}
+.creations__item:nth-child(8)::after {
+  background-image: url(./images/desktop/image-fisheye.jpg);
+}
+.creations__item:hover::after {
+  opacity: 0.5;
+}
+.creations__item:hover > p {
+  color: var(--Black);
+}
+
+/* Footer */
+
+.main-footer {
+  margin-top: 4em;
+  box-sizing: border-box;
+  padding: 2em 0;
+  background-color: var(--Black);
+  color: var(--White);
+}
+.main-footer__nav {
+  display: flex;
+  justify-content: space-between;
+}
+.main-footer__logo {
+  width: 150px;
+  height: 30px;
+}
+.main-footer__social-media {
+  margin-bottom: 2em;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-footer__list {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-footer__item:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
 
 @media screen and (max-width: 1170px) {
   .container {
     box-sizing: border-box;
     padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .main-header__hamburger {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    display: block;
+    background: url(./images/icon-hamburger.svg) no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  .main-header__close {
+    position: relative;
+    z-index: 25;
+    height: 30px;
+    width: 30px;
+    display: block;
+    background: url(./images/icon-close.svg) no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  .main-header__list {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 12em 2em;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--Black);
+  }
+  .main-header__item {
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+
+  .main-title__text {
+    margin-top: 3em;
+    border-width: 2px;
+  }
+
+  .middle-section {
+    height: auto;
+    text-align: center;
+    margin: 0;
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  .middle-section__content {
+    position: static;
+    width: 100%;
+  }
+  .creations {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+  .creations__item {
+    height: 150px;
+  }
+  .creations__item:nth-child(1)::after {
+    background-image: url(./images/mobile/image-deep-earth.jpg);
+  }
+  .creations__item:nth-child(2)::after {
+    background-image: url(./images/mobile/image-night-arcade.jpg);
+  }
+  .creations__item:nth-child(3)::after {
+    background-image: url(./images/mobile/image-soccer-team.jpg);
+  }
+  .creations__item:nth-child(4)::after {
+    background-image: url(./images/mobile/image-grid.jpg);
+  }
+  .creations__item:nth-child(5)::after {
+    background-image: url(./images/mobile/image-from-above.jpg);
+  }
+  .creations__item:nth-child(6)::after {
+    background-image: url(./images/mobile/image-pocket-borealis.jpg);
+  }
+  .creations__item:nth-child(7)::after {
+    background-image: url(./images/mobile/image-curiosity.jpg);
+  }
+  .creations__item:nth-child(8)::after {
+    background-image: url(./images/mobile/image-fisheye.jpg);
+  }
+
+  .creations__button {
+    order: 3;
+    padding: 0.75em 1.25em;
+    margin: 2em auto 0;
+  }
+  .main-footer__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-footer__social-media {
+    position: relative;
+    top: 12em;
+    margin: 1em 0;
+    width: 150px;
+  }
+  .main-footer__list {
+    position: relative;
+    bottom: 4em;
+    margin: 1em 0;
+    height: 150px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hidden {
+    display: none;
   }
 }
